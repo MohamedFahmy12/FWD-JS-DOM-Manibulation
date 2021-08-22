@@ -55,8 +55,10 @@ function AddActiveOnScroll(currentActive) {
         /* remove active link class from anu li element and add it to the active section
         and Add active class to the section to make the animation */
         element.classList.remove('activeLink');
+        element.classList.add('removeHover');
         if (element.classList.contains(currentActive)) {
             element.classList.add('activeLink');
+            element.classList.remove('removeHover');
             document.getElementById(currentActive).classList.add('active');
         }
     })
@@ -98,6 +100,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Set sections as active
 window.addEventListener('scroll', () => {
     var currentActive = '';
+
     sectionList.forEach(section => {
         const sectionStart = section.offsetTop;
         section.classList.remove('active');
@@ -106,5 +109,21 @@ window.addEventListener('scroll', () => {
         }
     });
     AddActiveOnScroll(currentActive);
-})
+});
 
+document.querySelectorAll('li').forEach(li => {
+    li.addEventListener('mouseover', () => {
+        li.classList.remove('removeHover');
+
+    })
+});
+
+
+document.querySelectorAll('li').forEach(li => {
+    li.addEventListener('mouseout', () => {
+        if (!li.classList.contains('activeLink')) {
+            li.classList.add('removeHover');
+
+        }
+    })
+});

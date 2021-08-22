@@ -19,18 +19,23 @@ body {
     font-size: 1vmax;
 }
 
-
+.removeHover{
+    background: #fff !important;
+}
+.removeHover a {
+    color:  -webkit-link !important;
+}
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
-    margin: 2em 1rem;
+    margin: 1em 1rem;
 }
 
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 5em;
-        margin: 2em 4rem 1em;
+        margin: 1em 4rem 1em;
     }
 }
 
@@ -55,6 +60,7 @@ main {
 
 section {
     position: relative;
+    min-height: 50vh;
 }
 
 
@@ -90,6 +96,7 @@ section {
     color: rgb(219, 212, 212);
     transition: ease 0.3s all;
 }
+
 .activeLink{
     background: #4b4e4d;
     transition: ease 0.3s all;
